@@ -1,0 +1,36 @@
+{% extends "_global/index.html" %}
+
+{% block naslov %}
+{{ programInfo.ime }}
+{% endblock %}
+
+{% block main %}
+{% apply spaceless %}
+<nav>
+    <h1>{{ programInfo.ime }}</h1>
+    <a href="#" onclick="addBookmark({{ programInfo.program_id }});">Add to bookmark</a>
+
+    <h2>Opis programa:</h2>
+    <p>"{{ programInfo.opis }}"</p>
+
+    {% if programInfo.aktivan %}
+    <h3>Izaberite kog dana zelite da trenirate:</h3>
+
+    <ul>
+        
+            {% for dan in dani %}
+                
+                <li>
+                    <a href="{{ BASE }}dan/{{ dan.dani_id }}/program/{{ programInfo.program_id }}">
+                        {{ dan.dan|escape|title }}
+                    </a>
+                </li><br>
+                
+            {% endfor %}
+               
+    </ul>
+    {% endif %}
+
+</nav>
+{% endapply %}
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+
+<div class="row">
+    <form action="{{ BASE }}user/register" method="post"
+    class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
+        <div class="card">
+            <div class="card-header">
+                User registration
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="input_ime">Ime:</label>
+                    <input type="text" id="input_ime" name="reg_ime" placeholder="Unesite Vas ime..." required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="input_prezime">Prezime:</label>
+                    <input type="text" id="input_prezime" name="reg_prezime" placeholder="Unesite Vas prezime..." required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="input_br_tel">Broj telefona:</label>
+                    <input type="text" id="input_br_tel" name="reg_br_tel" placeholder="Unesite Vas broj telefona..." required class="form-control">
+                </div>
+                <div class="form-group">
+                <label for="input_email">Email:</label>
+                <input type="email" id="input_email" name="reg_email" placeholder="Unesite Vas email..." required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="input_password_1">Password:</label>
+                    <input type="password" id="input_password_1" name="reg_password_1" placeholder="Unesite Vas password..." required class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="input_password_2">Confirm password:</label>
+                    <input type="password" id="input_password_2" name="reg_password_2" placeholder="Unesite Vas password..." required class="form-control">
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

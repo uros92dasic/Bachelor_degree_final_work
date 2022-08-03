@@ -1,0 +1,23 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+
+<div>
+    <div class="options">
+        <a href="{{ BASE }}user/programi/">List all programs</a>
+        <a href="{{ BASE }}user/programi/add">Add new program</a>
+    </div>
+
+    <form class="programi-form" method="post">
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" value="{{ program.ime|escape }}">
+        </div>
+
+        <div>
+            <button type="submit">Edit program</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

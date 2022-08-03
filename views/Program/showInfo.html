@@ -1,0 +1,21 @@
+{% extends "_global/index.html" %}
+
+{% block naslov %}
+{{ programInf.ime }}
+{% endblock %}
+
+{% block main %}
+{% apply spaceless %}
+<nav>
+    <h1>{{ programInf.ime }}</h1>
+
+    <h2>Opis programa:</h2>
+    <p>"{{ programInf.opis }}"</p>
+
+    {% if programInf.aktivan %}
+    <h3>Izabrani program je aktivan!</h3>
+    {% endif %} 
+
+</nav>
+{% endapply %}
+{% endblock %}

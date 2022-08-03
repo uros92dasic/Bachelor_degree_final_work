@@ -1,0 +1,29 @@
+{% extends "_global/index.html" %}
+
+{% block naslov %}
+Zakazi
+{% endblock %}
+
+{% block main %}
+{% apply spaceless %}
+<nav>
+
+    <h2>Potvrdite da zelite da zakazete termin:</h2>
+    
+    {% for program in zakaziTermin %}
+                <p>Dan: {{ program.dan }}</p>
+                <p>Program: {{ program.ime }}</p>
+                <p>Termin: {{ program.vreme_od }} - {{ program.vreme_do }}</p>
+    {% endfor %}
+
+    <br>
+
+    <input type="text" placeholder="Unesite Vase ime:"><br>
+
+    <a href="{{ BASE }}">Potvrdi</a>
+    
+    <br><br>
+
+</nav>
+{% endapply %}
+{% endblock %}

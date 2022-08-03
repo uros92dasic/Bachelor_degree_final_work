@@ -1,0 +1,36 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+{% apply spaceless %}
+<p>{{ podatak }}</p>
+
+    <h1 style="text-align: center;">Dobro dosli u nas trening Centar!</h1>
+    <div class="row">
+        <a href="{{ BASE }}programi" 
+            class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 text-center mainList">
+            Programi
+        </a>
+        <a href="{{ BASE }}dani" 
+            class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 text-center mainList">
+            Termini
+        </a>
+        <a href="{{ BASE }}galerija" 
+            class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 text-center mainList">
+            Galerija
+        </a>
+        <a href="{{ BASE }}onama" 
+            class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 text-center mainList">
+            O nama
+        </a>
+        <a href="{{ BASE }}user/register" 
+            class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 text-center mainList">
+            Register
+        </a>
+        <a href="{{ BASE }}user/login" 
+            class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 text-center mainList">
+            Login
+        </a>
+    </div>
+    
+{% endapply %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "_global/index.html" %}
+
+{% block naslov %}
+Programi
+{% endblock %}
+
+{% block main %}
+{% apply spaceless %}
+<nav>
+
+    <h2>Izaberite program:</h2>
+
+    <ul>
+
+        {% for program in programi %}
+        
+            <li>
+                <a href="{{ BASE }}program/{{ program.program_id }}">
+                    {{ program.ime|escape|title }}
+                </a>
+            </li><br>
+
+        {% endfor %}
+
+    </ul>
+
+</nav>
+{% endapply %}
+{% endblock %}

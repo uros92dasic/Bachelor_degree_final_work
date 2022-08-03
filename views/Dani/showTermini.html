@@ -1,0 +1,27 @@
+{% extends "_global/index.html" %}
+
+{% block naslov %}
+Termini
+{% endblock %}
+
+{% block main %}
+{% apply spaceless %}
+<nav>
+
+    <h2>Spisak termina za izabrani program:</h2>
+    <ul>
+
+        {% for program in termini %}
+            <li>
+                <a href="{{ BASE }}dan/{{ program.dan_id }}/program/{{ program.program_id }}/termin/{{ program.termin_id }}">
+                    Termin: {{ program.termin_id|escape|title }}-{{ program.termin_id+1|escape|title }}h
+                </a> 
+            </li><br>
+
+        {% endfor %}
+
+    </ul>
+
+</nav>
+{% endapply %}
+{% endblock %}

@@ -1,0 +1,21 @@
+.social-icons { margin-bottom: 10px; }
+
+.social-icons a i.fa {
+    display: inline-block;
+    color: rgb(0, 102, 255);
+    font-size: 15pt;
+    margin: 5px;
+}
+
+.mainList {
+    padding: 50px 0px;
+    border: 1px solid #eee;
+    background: rgba(230, 230, 230, 0.2);
+    text-decoration: none;
+    color: #000;
+}
+
+.mainList:hover {
+    border: 1px solid #ccc;
+    background: rgba(240, 240, 240, 0.6);
+}
