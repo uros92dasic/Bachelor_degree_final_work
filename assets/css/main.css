@@ -19,3 +19,7 @@
     border: 1px solid #ccc;
     background: rgba(240, 240, 240, 0.6);
 }
+
+.bookmark-card {
+    margin: 10px 0;
+}
