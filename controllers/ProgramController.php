@@ -36,4 +36,25 @@
             die('Nije zavrsena implementacija brisanja.');
         }
 
+        private function normaliseKeywords(string $keywords): string {
+            $keywords = trim($keywords);
+            $keywords = preg_replace('/ +/', ' ', $keywords);
+            # ...
+            return $keywords;
+        }
+
+        public function postSearch() {
+            $programModel = new \App\Models\ProgramModel($this->getDatabaseConnection());
+            
+            $q = filter_input(INPUT_POST, 'q', FILTER_SANITIZE_STRING);
+            $q = $this->normaliseKeywords($q);
+
+            $programSearch = $programModel->getAllBySearch($q);
+
+            /*print_r($programSearch);
+            exit;*/
+            
+            $this->set('postSearch', $programSearch);
+        }
+
     }

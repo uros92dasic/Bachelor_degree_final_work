@@ -17,4 +17,18 @@
             ];
         }
 
+        public function getAllBySearch(string $keywords) {
+            $sql = 'SELECT * FROM program WHERE `ime` LIKE ? OR `opis` LIKE ?;';
+            $keywords = '%'.$keywords.'%';
+            $prep = $this->getConnection()->prepare($sql);
+            if (!$prep) {
+                return [];
+            }
+            $res = $prep->execute([$keywords, $keywords]);
+            if (!$res) {
+                return [];
+            }
+
+            return $prep->fetchAll(\PDO::FETCH_OBJ);
+        }
     }

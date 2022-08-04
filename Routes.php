@@ -18,9 +18,12 @@
 
         App\Core\Route::get ('|^dan/([0-9]+)/program/([0-9]+)/termin/([0-9]+)/?$|',     'Termin',           'show'),
 
-        App\Core\Route::get ('|^api/program/([0-9]+)/?$|',                              'ApiProgram',       'showProgram'),
+        App\Core\Route::post('|^search$|',                                              'Program',          'postSearch'),
+
 
         # API routes:
+        App\Core\Route::get ('|^api/program/([0-9]+)/?$|',                              'ApiProgram',       'showProgram'),
+
         App\Core\Route::get ('|^api/bookmarks/?$|',                                     'ApiBookmark',      'getBookmarks'),
         App\Core\Route::get ('|^api/bookmarks/add/([0-9]+)?$|',                         'ApiBookmark',      'addBookmark'),
         App\Core\Route::get ('|^api/bookmarks/clear/?$|',                               'ApiBookmark',      'clearBookmarks'),
