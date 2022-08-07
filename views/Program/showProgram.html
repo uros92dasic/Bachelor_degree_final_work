@@ -15,20 +15,16 @@
 
     {% if programInfo.aktivan %}
     <h3>Izaberite kog dana zelite da trenirate:</h3>
-
-    <ul>
-        
+   
             {% for dan in dani %}
-                
-                <li>
-                    <a href="{{ BASE }}dan/{{ dan.dani_id }}/program/{{ programInfo.program_id }}">
-                        {{ dan.dan|escape|title }}
-                    </a>
-                </li><br>
-                
+            <div class="termini list-group">
+                <a  class="list-group-item list-group-item-action"  
+                    href="{{ BASE }}dan/{{ dan.dani_id }}/program/{{ programInfo.program_id }}">
+                    {{ dan.dan|escape|title }}
+                </a>
+            </div>
             {% endfor %}
-               
-    </ul>
+
     {% endif %}
 
 </nav>

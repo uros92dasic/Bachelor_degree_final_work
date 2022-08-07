@@ -9,18 +9,17 @@ Termini
 <nav>
 
     <h2>Spisak termina za izabrani program:</h2>
-    <ul>
 
         {% for program in termini %}
-            <li>
-                <a href="{{ BASE }}dan/{{ program.dan_id }}/program/{{ program.program_id }}/termin/{{ program.termin_id }}">
+        <div class="termini list-group">
+            <!--<div class="col-12 col-md-2"></div>-->
+                <a  class="list-group-item list-group-item-action"
+                    href="{{ BASE }}dan/{{ program.dan_id }}/program/{{ program.program_id }}/termin/{{ program.termin_id }}">
                     Termin: {{ program.termin_id|escape|title }}-{{ program.termin_id+1|escape|title }}h
-                </a> 
-            </li><br>
-
+                </a>
+            
+        </div>
         {% endfor %}
-
-    </ul>
 
 </nav>
 {% endapply %}

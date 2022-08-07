@@ -10,19 +10,14 @@ Programi
 
     <h2>Izaberite program:</h2>
 
-    <ul>
-
         {% for program in programi %}
-        
-            <li>
-                <a href="{{ BASE }}program/{{ program.program_id }}">
-                    {{ program.ime|escape|title }}
-                </a>
-            </li><br>
-
+        <div class="termini list-group">
+            <a  class="list-group-item list-group-item-action" 
+                href="{{ BASE }}program/{{ program.program_id }}">
+                {{ program.ime|escape|title }}
+            </a>
+        </div>
         {% endfor %}
-
-    </ul>
 
 </nav>
 {% endapply %}

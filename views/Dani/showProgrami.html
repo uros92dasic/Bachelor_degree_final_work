@@ -9,19 +9,18 @@ Programi
 <nav>
 
     <h2>Spisak programa za izabrani dan:</h2>
-    <ul>
 
         {% for program in programi %}
             {% if program.aktivan %}
-            <li>
-                <a href="{{ BASE }}dan/{{ program.dan_id }}/program/{{ program.program_id }}">
+            <div class="termini list-group">
+                <a  class="list-group-item list-group-item-action"
+                    href="{{ BASE }}dan/{{ program.dan_id }}/program/{{ program.program_id }}">
                     {{ program.ime|escape|title }}
                 </a>
-            </li><br>
+            </div>
             {% endif %}
         {% endfor %}
 
-    </ul>
 
 </nav>
 {% endapply %}

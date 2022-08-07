@@ -11,14 +11,23 @@ Zakazi
     <h2>Potvrdite da zelite da zakazete termin:</h2>
     
     {% for program in zakaziTermin %}
-                <p>Dan: {{ program.dan }}</p>
-                <p>Program: {{ program.ime }}</p>
-                <p>Termin: {{ program.vreme_od }} - {{ program.vreme_do }}</p>
+                <ul class="list-group list-group-horizontal">
+                    <li class="left-item list-group-item">Dan:</li>
+                    <li class="list-group-item">{{ program.dan }}</li>
+                </ul>
+                <ul class="list-group list-group-horizontal">
+                    <li class="left-item list-group-item">Program:</li>
+                    <li class="list-group-item">{{ program.ime }}</li>
+                </ul>
+                <ul class="list-group list-group-horizontal">
+                    <li class="left-item list-group-item">Termin:</li>
+                    <li class="list-group-item">{{ program.vreme_od }} - {{ program.vreme_do }}</li>
+                </ul>
     {% endfor %}
 
     <br>
 
-    <input type="text" placeholder="Unesite Vase ime:"><br>
+    <input type="text" placeholder="Unesite Vase ime:"><br><br>
 
     <a href="{{ BASE }}">Potvrdi</a>
     
