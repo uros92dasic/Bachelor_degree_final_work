@@ -25,6 +25,7 @@
             ];
         }
 
+
         public function getByIme(string $korisnikIme) {
             return $this->getByFieldName('ime', $korisnikIme);
         }

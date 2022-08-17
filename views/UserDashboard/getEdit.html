@@ -1,0 +1,63 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div class="options">
+    <a href="{{ BASE }}user/profile">Vrati se na profil</a><br>
+</div>
+<div class="form">
+    <form class="profile-form" method="POST" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="ime">Ime: </label>
+            <input type="text" id="ime" name="ime" required class="form-control"
+                   value="{{ korisnik.ime }}">
+        </div>
+        <div required class="form-group">
+            <label for="prezime">Prezime: </label>
+            <input type="text" id="prezime" name="prezime" required class="form-control"
+                   value="{{ korisnik.prezime }}">
+        </div>
+        <div class="form-group">
+            <label for="br_tel">Broj telefona: </label>
+            <input type="text" id="br_tel" name="br_tel" required class="form-control"
+                   value="{{ korisnik.br_tel }}">
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail: </label>
+            <input type="text" id="email" name="email" required class="form-control"
+                   value="{{ korisnik.email }}">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-pencil"></i>
+                Edit profile
+            </button>
+        </div>
+        <div class="alert alert-warning d-none" id="error-message"></div>
+    </form>
+
+    <script>
+        function validateForm() {
+            let status = true;
+            document.querySelector('#error-message').classList.add('d-none');
+            document.querySelector('#error-message').innerHTML = '';
+
+            const ime = document.querySelector('#ime').value;
+            if (!ime.match(/.*[^\s]{3,}.*/)) {
+                document.querySelector('#error-message').innerHTML += 'Ime mora sadrzati minimum 3 vidljiva karaktera...<br>';
+                document.querySelector('#error-message').classList.remove('d-none');
+                status = false;
+            }
+
+            const prezime = document.querySelector('#prezime').value;
+            if (!prezime.match(/.*[^\s]{3,}.*/)) {
+                document.querySelector('#error-message').innerHTML += 'Prezime mora sadrzati minimum 3 vidljiva karaktera...<br>';
+                document.querySelector('#error-message').classList.remove('d-none');
+                status = false;
+            }
+
+            return status;
+        }
+    </script>
+</div>
+
+{% endblock %}

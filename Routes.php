@@ -29,6 +29,8 @@
 
         # User role routes:
         App\Core\Route::get ('|^user/profile/?$|',                                  'UserDashboard',    'index'),
+        App\Core\Route::get ('|^user/profile/edit/?$|',                             'UserDashboard',    'getEdit'),
+        App\Core\Route::post('|^user/profile/edit/?$|',                             'UserDashboard',    'postEdit'),
         
         # ProgramModel <- program
 

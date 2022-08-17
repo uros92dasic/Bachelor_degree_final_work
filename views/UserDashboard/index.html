@@ -10,4 +10,25 @@
     </div>
 </div>
 
+<div>
+    <ul class="list-group list-group-horizontal">
+        <li class="left-item list-group-item">Ime:</li>
+        <li class="list-group-item">{{korisnik.ime}}</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+        <li class="left-item list-group-item">Prezime:</li>
+        <li class="list-group-item">{{korisnik.prezime}}</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+        <li class="left-item list-group-item">Br Tel:</li>
+        <li class="list-group-item">{{korisnik.br_tel}}</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+        <li class="left-item list-group-item">E-mail:</li>
+        <li class="list-group-item">{{korisnik.email}}</li>
+    </ul>
+</div>
+
+<a href="{{ BASE }}user/profile/edit/">Edit profile</a>
+
 {% endblock %}
