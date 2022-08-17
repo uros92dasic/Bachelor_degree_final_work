@@ -17,11 +17,4 @@
             $this->set('programi', $programi);
         }
 
-        public function showTermini($danId, $programId) {
-            $programTerminModel = new \App\Models\ProgramTerminModel($this->getDatabaseConnection());
-            $termini = $programTerminModel->getTerminByDanProgramId($danId, $programId);
-
-            $this->set('termini', $termini);
-        }
-
     }

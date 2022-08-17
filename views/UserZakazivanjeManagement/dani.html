@@ -1,0 +1,25 @@
+
+
+{% extends "_global/index.html" %}
+
+{% block main %}
+
+<div>
+    <div class="options">
+        <a href="{{ BASE }}user/zakazi/add">Zakazi termin</a>
+    </div>
+    
+    <h3>Izaberite kog dana zelite da trenirate:</h3>
+   
+            {% for dan in dani %}
+            <div class="termini list-group">
+                <a  class="list-group-item list-group-item-action"  
+                    href="{{ BASE }}user/zakazi/program/{{ programi.program_id }}/dan/{{ dan.dani_id }}">
+                    {{ dan.dan|escape|title }}
+                </a>
+            </div>
+            {% endfor %}
+
+</div>
+
+{% endblock %}

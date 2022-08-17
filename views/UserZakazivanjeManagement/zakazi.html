@@ -1,0 +1,23 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+
+<div>
+    <div class="options">
+        <a href="{{ BASE }}user/zakazi/program">Zakazi termin</a>
+    </div>
+    
+    <div class="termini">
+        <ul>
+            {% for termin in zakazivanje %}
+            <li>
+                <a href="{{ BASE }}user/zakazi/edit/{{ termin.program_termin_id }}">
+                    Termin: {{ termin.program_termin_id|escape }} || Korisnik: {{ termin.korisnik_id|escape }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

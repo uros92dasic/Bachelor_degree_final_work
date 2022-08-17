@@ -1,0 +1,47 @@
+
+
+{% extends "_global/index.html" %}
+
+{% block naslov %}
+Termini
+{% endblock %}
+
+{% block main %}
+{% apply spaceless %}
+<nav>
+
+    <h2>test:</h2>
+
+    <ul class="list-group list-group-horizontal">
+        <li class="left-item list-group-item">TerminId:</li>
+        <li class="list-group-item">{{ zakaziTermin.program_termin_id }}</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+        <li class="left-item list-group-item">Program:</li>
+        <li class="list-group-item">{{ zakaziTermin.ime }}</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+        <li class="left-item list-group-item">Dan:</li>
+        <li class="list-group-item">{{ zakaziTermin.dan }}</li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+        <li class="left-item list-group-item">Termin:</li>
+        <li class="list-group-item">{{ zakaziTermin.vreme_od }} - {{ zakaziTermin.vreme_do }}</li>
+    </ul>
+
+    <form class="termin-form" method="POST">
+        <div class="form-group">
+            <label for="programTerminId">Potvrdite ID termina:</label>
+            <input type="text" id="programTerminId" name="programTerminId" required class="form-control">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-plus"></i>
+                Zakazite termin
+            </button>
+        </div>
+    </form>
+
+</nav>
+{% endapply %}
+{% endblock %}

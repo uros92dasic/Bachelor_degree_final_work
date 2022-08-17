@@ -31,6 +31,13 @@
 
             $this->set('dani', $dani);
         }
+
+        public function showTermini($programId, $danId) {
+            $programTerminModel = new \App\Models\ProgramTerminModel($this->getDatabaseConnection());
+            $termini = $programTerminModel->getTerminByProgramDanId($programId, $danId);
+
+            $this->set('termini', $termini);
+        }
         
         public function delete($id){
             die('Nije zavrsena implementacija brisanja.');

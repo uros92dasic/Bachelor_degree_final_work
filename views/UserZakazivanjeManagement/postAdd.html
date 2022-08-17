@@ -3,11 +3,11 @@
 {% block main %}
 
 <div>
-    Dashboard
     <div class="options">
-        <a href="{{ BASE }}user/program/">Spisak svih programa</a><br>
         <a href="{{ BASE }}user/zakazi/">Spisak svih termina</a>
     </div>
+
+    <p>{{ message|escape }}</p>
 </div>
 
 {% endblock %}

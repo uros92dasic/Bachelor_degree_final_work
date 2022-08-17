@@ -13,4 +13,14 @@
                 'korisnik_id'           => new Field((new NumberValidator())->setIntegerLength(11))
             ];
         }
+
+        public function getAllByKorisnikId(int $korisnikId): array {
+            return $this->getAllByFieldName('korisnik_id', $korisnikId);
+        }
+
+        public function getAllByProgramTerminId(int $programTerminId) {
+            return $this->getByFieldName('program_termin_id', $programTerminId);
+        }
     }
+
+    

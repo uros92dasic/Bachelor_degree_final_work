@@ -1,0 +1,24 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+
+<div>
+    <div class="options">
+        <a href="{{ BASE }}user/zakazi/">Spisak termina</a>
+        <a href="{{ BASE }}user/zakazi/program">Zakazi termin</a>
+    </div>
+
+    ID termina: {{termin.program_termin_id}}
+    <form class="termini-form" method="post">
+        <div>
+            <label for="idTermina">Potvrdite ID termina koji zelite da otkazete: </label>
+            <input type="text" id="idTermina" name="idTermina">
+        </div>
+
+        <div>
+            <button type="submit">Otkazi termin</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

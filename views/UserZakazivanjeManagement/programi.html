@@ -4,14 +4,14 @@
 
 <div>
     <div class="options">
-        <a href="{{ BASE }}user/program/add">Add new program</a>
+        <a href="{{ BASE }}user/zakazi/">Spisak svih termina</a>
     </div>
 
     <div class="programi">
         <ul>
             {% for program in programi %}
             <li>
-                <a href="{{ BASE }}user/program/edit/{{ program.program_id }}">
+                <a href="{{ BASE }}user/zakazi/program/{{ program.program_id }}">
                     {{ program.ime|escape }}
                 </a>
             </li>

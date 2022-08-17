@@ -3,9 +3,9 @@
 
     class TerminController extends \App\Core\Controller {
 
-        public function show($danId, $programId, $terminId) {
+        public function show($programId, $danId, $terminId) {
             $programTerminModel = new \App\Models\ProgramTerminModel($this->getDatabaseConnection());
-            $zakaziTermin = $programTerminModel->getZakaziTermin($danId, $programId, $terminId);
+            $zakaziTermin = $programTerminModel->getZakaziTerminInfo($programId, $danId, $terminId);
 
             $this->set('zakaziTermin', $zakaziTermin);
 

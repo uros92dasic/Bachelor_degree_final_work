@@ -14,7 +14,7 @@
             $program = $programModel->getById($programId);
 
             if (!$program) {
-                $this->redirect(\Configuration::BASE.'user/programi');
+                $this->redirect(\Configuration::BASE.'user/program');
             }
 
             $this->set('program', $program);
@@ -31,7 +31,7 @@
                 'ime' => $ime
             ]);
 
-            $this->redirect(\Configuration::BASE.'user/programi');
+            $this->redirect(\Configuration::BASE.'user/program');
         }
 
         public function getAdd() {
@@ -47,7 +47,7 @@
             ]);
 
             if ($programId) {
-                $this->redirect(\Configuration::BASE.'user/programi');
+                $this->redirect(\Configuration::BASE.'user/program');
             }
 
             $this->set('message', 'Doslo je do kreske: Nije moguce dodati ovaj program...');

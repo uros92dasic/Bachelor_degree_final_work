@@ -39,11 +39,11 @@
             }
 
             if ($this->isDateAllowed === true && $this->isTimeAllowed === true) {
-                $pattern .= ' ';
+                $pattern .= '[ T]';
             }
 
             if ($this->isTimeAllowed === true) {
-                $pattern .= '[0-9]{2}:[0-9]{2}:[0-9]{2}';
+                $pattern .= '[0-9]{2}:[0-9]{2}(?::[0-9]{2})?';
             }
 
             $pattern .= '$/';

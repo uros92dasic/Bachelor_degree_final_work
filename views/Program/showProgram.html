@@ -19,7 +19,7 @@
             {% for dan in dani %}
             <div class="termini list-group">
                 <a  class="list-group-item list-group-item-action"  
-                    href="{{ BASE }}dan/{{ dan.dani_id }}/program/{{ programInfo.program_id }}">
+                    href="{{ BASE }}program/{{ programInfo.program_id }}/dan/{{ dan.dani_id }}">
                     {{ dan.dan|escape|title }}
                 </a>
             </div>

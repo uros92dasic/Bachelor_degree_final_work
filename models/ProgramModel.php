@@ -17,6 +17,10 @@
             ];
         }
 
+        public function getAllActive(int $aktivan): array {
+            return $this->getAllByFieldName('aktivan', $aktivan);
+        }
+
         public function getAllBySearch(string $keywords) {
             $sql = 'SELECT * FROM program WHERE `ime` LIKE ? OR `opis` LIKE ?;';
             $keywords = '%'.$keywords.'%';

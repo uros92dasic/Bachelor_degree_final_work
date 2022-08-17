@@ -14,7 +14,7 @@ Programi
             {% if program.aktivan %}
             <div class="termini list-group">
                 <a  class="list-group-item list-group-item-action"
-                    href="{{ BASE }}dan/{{ program.dan_id }}/program/{{ program.program_id }}">
+                    href="{{ BASE }}program/{{ program.program_id }}/dan/{{ program.dan_id }}">
                     {{ program.ime|escape|title }}
                 </a>
             </div>

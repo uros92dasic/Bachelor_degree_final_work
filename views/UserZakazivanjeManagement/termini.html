@@ -10,14 +10,13 @@ Termini
 
     <h2>Spisak termina za izabrani program:</h2>
 
-        {% for program in termini %}
+        {% for termin in termini %}
         <div class="termini list-group">
             <!--<div class="col-12 col-md-2"></div>-->
                 <a  class="list-group-item list-group-item-action"
-                    href="{{ BASE }}dan/{{ program.dan_id }}/program/{{ program.program_id }}/termin/{{ program.termin_id }}">
-                    Termin: {{ program.termin_id|escape|title }}-{{ program.termin_id+1|escape|title }}h
+                    href="{{ BASE }}user/zakazi/program/{{ termin.program_id }}/dan/{{ termin.dan_id }}/termin/{{ termin.termin_id }}">
+                    Termin: {{ termin.termin_id|escape|title }}-{{ termin.termin_id+1|escape|title }}h
                 </a>
-            
         </div>
         {% endfor %}
 
