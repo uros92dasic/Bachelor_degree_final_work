@@ -51,10 +51,10 @@
                 $arguments = $matches[1];
             }
             if (isset($matches[2])) {
-                $arguments[] = $matches[2][0]; //array_values($matches)[n];
+                $arguments[] = $matches[2][0];
             }
             if (isset($matches[3])) {
-                $arguments[] = $matches[3][0]; //array_values($matches)[n];
+                $arguments[] = $matches[3][0];
             }
 
             return $arguments;

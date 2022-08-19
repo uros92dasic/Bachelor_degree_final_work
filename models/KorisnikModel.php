@@ -25,7 +25,6 @@
             ];
         }
 
-
         public function getByIme(string $korisnikIme) {
             return $this->getByFieldName('ime', $korisnikIme);
         }
@@ -41,34 +40,4 @@
         public function getByEmail(string $korisnikEmail) {
             return $this->getByFieldName('email', $korisnikEmail);
         }
-
-        /*
-        public function getByUsername(string $username) {
-            return $this->getByFieldName('username', $username);
-        }
-        */
-
-        /*
-        public function getAllByCategoryId(int $categoryId): array {
-            return $this->getByFieldName('category_id', $categoryId);
-        }
-        */
-
-        /*
-        public function getAllByAuctionId(int $auctionId): array {
-            $items = $this->getAllByFieldName('auctioni_id', $auctionId);
-
-            usort($items, function($a, $b) {
-                return strcmp($a->created_at, $b->created_at);
-            });
-
-            return $items;
-        }
-        */
-
-        /*
-        public function getAllByIpAddress(string $ipAddress): array {
-            return $this->getAllByFieldName('ip_address', $ipAddress);
-        }
-        */
     }

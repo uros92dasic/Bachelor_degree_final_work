@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
             <label for="email">E-mail: </label>
-            <input type="text" id="email" name="email" required class="form-control"
+            <input type="email" id="email" name="email" required class="form-control"
                    value="{{ korisnik.email }}">
         </div>
         <div class="form-group">
@@ -51,6 +51,20 @@
             const prezime = document.querySelector('#prezime').value;
             if (!prezime.match(/.*[^\s]{3,}.*/)) {
                 document.querySelector('#error-message').innerHTML += 'Prezime mora sadrzati minimum 3 vidljiva karaktera...<br>';
+                document.querySelector('#error-message').classList.remove('d-none');
+                status = false;
+            }
+
+            const br_tel = document.querySelector('#br_tel').value;
+            if (!br_tel.match(/.*[^\s]{9,}.*/)) {
+                document.querySelector('#error-message').innerHTML += 'Broj telefona mora sadrzati minimum 9 vidljiva karaktera...<br>';
+                document.querySelector('#error-message').classList.remove('d-none');
+                status = false;
+            }
+
+            const email = document.querySelector('#email').value;
+            if (!email.match(/.*[^\s]{3,}.*/)) {
+                document.querySelector('#error-message').innerHTML += 'E-mail mora sadrzati minimum 3 vidljiva karaktera...<br>';
                 document.querySelector('#error-message').classList.remove('d-none');
                 status = false;
             }

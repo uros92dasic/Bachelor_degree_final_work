@@ -57,22 +57,4 @@
             }
             return $termini;
         }
-
-        /*public function getId(int $programId, int $danId, int $terminId) {
-            $sql = 'SELECT program_termin_id
-                    FROM `program_termin`
-                    INNER JOIN `program` ON program_termin.program_id=program.program_id
-                    INNER JOIN `dani` ON program_termin.dan_id=dani.dani_id
-                    INNER JOIN `termin` ON program_termin.termin_id=termin.termin_id
-                    WHERE program_termin.program_id = ?
-                    AND program_termin.dan_id = ?
-                    AND program_termin.termin_id = ?;';
-            $prep = $this->getConnection()->prepare($sql);
-            $res = $prep->execute([$programId, $danId, $terminId]);
-            $item = NULL;
-            if($res){
-                $item = $prep->fetch(\PDO::FETCH_OBJ);
-            }
-            return $item;
-        }*/
     }

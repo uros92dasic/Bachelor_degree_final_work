@@ -14,10 +14,6 @@
             $programModel = new \App\Models\ProgramModel($this->getDatabaseConnection());
             $programInfo = $programModel->getById($id);
 
-            /*
-            var_dump($programInfo);
-            exit; //provera da li dobijamo NULL ili FALSE prilikom pogresnog upisa, if ($programInfo === false) { }
-            */
             if (!$programInfo) {
                 header('Location: /');
                 exit;
@@ -58,10 +54,6 @@
 
             $programSearch = $programModel->getAllBySearch($q);
 
-            /*print_r($programSearch);
-            exit;*/
-            
             $this->set('postSearch', $programSearch);
         }
-
     }

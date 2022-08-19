@@ -44,16 +44,6 @@
             $zakaziTermin = $programTerminModel->getZakaziTerminInfo($programId, $danId, $terminId);
 
             $this->set('zakaziTermin', $zakaziTermin);
-
-            /*$programTerminId = $programTerminModel->getId($programId, $danId, $terminId);
-            $array = get_object_vars($programTerminId);
-            $value = array_shift( $array );
-
-            $zakaziModel = new \App\Models\ZakazivanjeModel($this->getDatabaseConnection());
-            $zakaziModel->add([
-                'program_termin_id' => $value,
-                'korisnik_id'       => $korisnikId,
-            ]);*/
         }
 
         public function postAdd($programId, $danId, $terminId) {
@@ -90,22 +80,19 @@
                 return;
             }
 
-            #if ($termin->korisnik_id != $this->getSession()->get('korisnik_id')) {
-            #    $this->redirect(\Configuration::BASE.'user/zakazi/');
-            #    return;
-            #}
+            $zakazivanjeModel = new \App\Models\ZakazivanjeModel($this->getDatabaseConnection());
+            $korisnik = $zakazivanjeModel->getAllByProgramTerminId($programTerminId);
+
+            if ($korisnik->korisnik_id != $this->getSession()->get('korisnik_id')) {
+                $this->redirect(\Configuration::BASE.'user/zakazi/');
+                return;
+            }
 
             $this->set('termin', $termin);
         }
 
         public function postEdit($programTerminId) {
             $this->getEdit($programTerminId);
-
-            /*$editData = [
-                #...
-            ];
-            $programTerminModel = new \App\Models\ProgramTerminModel($this->getDatabaseConnection());
-            $res = $programTerminModel->editById($programTerminId, $editData);*/
             
             $zakaziModel = new \App\Models\ZakazivanjeModel($this->getDatabaseConnection());
             $zakaziTermin = $zakaziModel->getAllByProgramTerminId($programTerminId);

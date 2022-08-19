@@ -4,28 +4,7 @@
     class MainController extends \App\Core\Controller {
         
         public function home() {
-            //$testModel = new \App\Models\TestModel($this->getDatabaseConnection());
-            //$testModel->deleteById(20);
-            /*
-            $testModel->editById(20, [
-                'user_agent' => 'Firefox...'
-            ]);
-            */
             
-            //$this->getSession()->put('neki_kljuc', 'Neka vrednost ' . rand(100, 999));
-            /*
-            $staraVrednost = $this->getSession()->get('neki_kljuc', '/');
-            $this->set('podatak', $staraVrednost);
-            */
-            //$this->getSession()->clear();
-
-            /*
-            $staraVrednost = $this->getSession()->get('brojac', 0);
-            $novaVrednost = $staraVrednost + 1;
-            $this->getSession()->put('brojac', $novaVrednost);
-
-            $this->set('podatak', $novaVrednost);
-            */
         }
 
         public function getRegister() {
@@ -39,17 +18,7 @@
             $email = \filter_input(INPUT_POST, 'reg_email', FILTER_SANITIZE_EMAIL);
             $password1 = \filter_input(INPUT_POST, 'reg_password_1', FILTER_SANITIZE_STRING);
             $password2 = \filter_input(INPUT_POST, 'reg_password_2', FILTER_SANITIZE_STRING);
-            /*
-            print_r([
-                $ime        ,
-                $prezime    ,
-                $br_tel     ,
-                $email      ,
-                $password1  ,
-                $password2 
-            ]);
-            exit;
-            */
+            
             if ($password1 !== $password2) {
                 $this->set('message', 'Doslo je do greske: Niste uneli dva puta istu lozinku.');
                 return;
@@ -69,7 +38,7 @@
                 $this->set('message', 'Doslo je do greske: Korisnik sa tim emailom vec postoji.');
                 return;
             }
-            //$username = $korisnikModel->getByFieldName('username', $username); ... if ($username) ...
+            //$username = $korisnikModel->getByFieldName('username', $username); ... if ($username) ... ako user/email postoji
 
             $passwordHash = \password_hash($password1, PASSWORD_DEFAULT);
 
@@ -117,22 +86,6 @@
                 $this->set('message', 'Doslo je do greske: Lozinka nije ispravna.');
                 return;
             }
-            
-            /*
-            $korisnikUlogaModel = new \App\Models\KorisnikUlogaModel($this->getDatabaseConnection());
-            $korisnikUloga = $korisnikUlogaModel->getByFieldName('korisnik_id', $korisnik->korisnik_id);
-            $this->getSession()->put('uloga_id', $korisnikUloga->uloga_id);
-            
-            print_r([
-                $korisnik->korisnik_id ,
-                $korisnik->ime        ,
-                $korisnik->prezime    ,
-                $korisnik->br_tel     ,
-                $korisnik->email      ,
-                $korisnikUloga->uloga_id
-            ]);
-            exit;
-            */
             
             $this->getSession()->put('korisnik_id', $korisnik->korisnik_id);
             $this->getSession()->save();

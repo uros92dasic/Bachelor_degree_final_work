@@ -23,11 +23,7 @@ foreach ($routes as $route) {
 }
 $route = $router->find($httpMethod, $url);
 $arguments = $route->extractArguments($url);
-/*
-print_r($route);
-print_r($arguments);
-exit;
-*/ 
+
 $fullControllerName = '\\App\\Controllers\\'.$route->getControllerName().'Controller';
 $controller = new $fullControllerName($databaseConnection);
 
